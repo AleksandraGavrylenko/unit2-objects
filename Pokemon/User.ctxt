@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=User
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ User\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=na
+comment1.target=User(java.lang.String)
+comment2.params=p
+comment2.target=void\ setPokemon(Pokemon)
+comment3.params=
+comment3.target=Pokemon\ getPokemon()
+comment4.params=
+comment4.target=void\ Switch()
+comment5.params=
+comment5.target=void\ heal()
+comment6.params=
+comment6.target=void\ act()
+numComments=7
