@@ -16,6 +16,7 @@ public class User extends Actor
     private Pokemon pokemon;
     public User(String na){
         this.name = na;
+        this.pokemon = null;
     }
     public void setPokemon(Pokemon p){
         this.pokemon = p;
@@ -23,11 +24,24 @@ public class User extends Actor
     public Pokemon getPokemon(){
         return this.pokemon;
     }
-    public void Switch(){
-        
+    public void switchPokemon(Pokemon p){
+        setPokemon(p);
     }
     public void heal(){
-        
+        if (this.pokemon != null){
+            this.pokemon.heal();
+        }
+    }
+    public void attack(String n, User en){
+        if (this.pokemon != null){
+            this.pokemon.attack(n, en);
+        }
+    }
+    public boolean isEndGame(){
+        return this.pokemon.isOut();
+    }
+    public String getName(){
+        return this.name;
     }
     public void act()
     {
