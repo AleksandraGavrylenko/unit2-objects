@@ -20,16 +20,14 @@ public class StringSpeed {
         //    StringBuilder sb = new StringBuilder();  then  sb.append("t");
         //    At the end: String t = sb.toString();
         start = System.nanoTime();
-        String t = "";
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i<n; i++){
-            sb.append(""+i);
+            sb.append("t");
         }
-        t = sb.toString();
         long builderTime = System.nanoTime() - start;
-        System.out.println(t);
-        System.out.println(s);
-        System.out.println("Same text? " + s.equals(t));
+        System.out.println(sb.toString().substring(0,20));
+        System.out.println(s.substring(0,20));
+        System.out.println("Same text? " + s.equals(sb.toString()));
         System.out.println("+= time (ms): " + plusTime / 1_000_000.0);
         System.out.println("StringBuilder time (ms): " + builderTime / 1_000_000.0);
     }
