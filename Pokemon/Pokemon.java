@@ -20,9 +20,11 @@ public class Pokemon extends Actor
         this.ap = ap;
         this.name = name;
         this.img = new GreenfootImage(name + ".png");
+        this.img.scale(160,160);
         setImage(this.img);
         this.attack = new Attack(attack);
         this.type = type;
+        this.outStatus = false;
     }    
     public String getType(){
     return type;
@@ -34,6 +36,7 @@ public class Pokemon extends Actor
         this.hp -= a;
         if(this.hp < 0){
             this.hp = 0;
+            outStatus = true;
         }
     }
     public void heal(){
@@ -46,7 +49,7 @@ public class Pokemon extends Actor
         System.out.println(this.attack);
     }
     public boolean isOut(){
-        return this.hp<=0;
+        return this.outStatus;
     }
     public int getAPower(String aName, User enemy){
         Attack a = enemy.getPokemon().getAttack();
