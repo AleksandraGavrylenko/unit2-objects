@@ -41,6 +41,6 @@ public class FrogSimulation{
                 count ++;
             }
         }
-        return count*(0.1)/n;
+        return count*(1.0)/n;
     }
 }
