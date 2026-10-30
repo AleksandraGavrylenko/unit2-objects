@@ -23,18 +23,18 @@ public class FrogSimulation{
             if(dist < 0){
                 return false;
             }
-            if(dist >= goalDistance){
-                return true;
-            }
+            // if(dist >= goalDistance){
+            //     return true;
+            // }
         }
     
-        return false;
+        return dist >= goalDistance;
     }
     public double runSimulations(int n){
         if(n<=0){
             return 0.0;
         }
-        count = 0;
+        int count = 0;
         for(int i = 1; i<n;i++){
             boolean res = simulate();
             if(res){
