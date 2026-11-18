@@ -16,7 +16,7 @@ public class SimpleServer{
     public void acceptClient() throws Exception{
         socket = serverSocket.accept();
         in = new Scanner(socket.getInputStream());
-        out = new PrintWriter(socket.getOutputStream(), autoFlush:true);
+        out = new PrintWriter(socket.getOutputStream(), true);
     }
     public String recieveMessage(){
         return in.nextLine();
@@ -34,14 +34,14 @@ public class SimpleServer{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         try{
-            SimpleServer server = new SimpleServer(9090);
+            SimpleServer server = new SimpleServer(1234);
             server.acceptClient();
             while(true){
                 String message = input.nextLine();
                 server.sendMessage(message);
                 String response = server.recieveMessage();
                 System.out.println("Client: "+response);
-                if(response.equals(anObject:"stop")){
+                if(response.equals("stop")){
                     break;
                 }
             }
